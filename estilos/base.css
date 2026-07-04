@@ -1,7 +1,6 @@
 /* ==========================================================================
    1. Tipografia (Google Fonts API) e Variáveis de Cores
    ========================================================================== */
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap');
 
 :root {
     --primary-color: #1b4d79;       /* Azul escuro dos títulos dos cards */
