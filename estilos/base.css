@@ -1,7 +1,6 @@
 /* ==========================================================================
-   1. Tipografia (Google Fonts API) e Variáveis de Cores
+   1. Variáveis de Cores e Tipografia
    ========================================================================== */
-
 :root {
     --primary-color: #1b4d79;       /* Azul escuro dos títulos dos cards */
     --secondary-color: #102a43;     /* Azul escuro do footer */
@@ -11,7 +10,7 @@
     --text-light: #ffffff;          /* Cor do texto claro */
     --accent-color: #ffeb3b;         /* Amarelo para a última modificação */
     
-    /* Fontes do projeto selecionadas via Google Fonts API */
+    /* Fontes do projeto selecionadas via Google Fonts API no HTML */
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Outfit', sans-serif;
     --font-footer: 'Fredoka', sans-serif; 
@@ -27,53 +26,56 @@
 }
 
 body {
-    font-family: var(--font-body); /* Opções de tipografia base */
+    font-family: var(--font-body);
     background-color: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
 }
 
 /* ==========================================================================
-   3. Cabeçalho (Header) e Navegação (Nav) - Correção de Contraste
+   3. Cabeçalho (Header) e Navegação (Nav) - Resolução de Contraste (WCAG AA)
    ========================================================================== */
 header {
     background-color: #1b4d79; /* rgb(27 77 121) */
-    color: var(--text-light);  /* Força todo o texto base do header a ser branco */
+    color: var(--text-light);  /* Força o texto padrão a ser branco */
     text-align: center;
     padding: 20px 0 0 0;
 }
 
 header h1 {
     font-family: var(--font-heading);
-    color: var(--text-light);  /* Garante o h1 e o span interno com cor branca rgb(255 255 255) */
+    color: var(--text-light) !important; /* Garante o h1 100% branco (rgb(255 255 255)) */
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 20px;
     padding: 0 10px;
 }
 
-/* Garante que o span específico do título também herde a cor branca */
+/* Força a exibição em bloco para o span de título conforme exigido */
 header h1 #course-title {
-    color: var(--text-light);
+    color: var(--text-light) !important;
+    display: block; /* Exibe como um bloco para centralizar com facilidade */
 }
 
-/* Força a propriedade display: block exigida nos requisitos para centralizar facilmente */
-header span {
-    display: block; 
-}
-
-/* Restante da navegação permanece igual... */
+/* Configuração do CSS Flex na lista de navegação */
 nav ul {
-    display: flex;                 
-    justify-content: space-around; 
-    list-style-type: none;         
-    background-color: var(--nav-bg-color);
+    display: flex;                 /* Ativa o CSS Flex na nav */
+    justify-content: space-around; /* Distribui os links uniformemente */
+    list-style-type: none;         /* Remove os marcadores de lista padrão */
+    background-color: var(--nav-bg-color); /* rgb(51 51 51) */
+    color: var(--text-light);              /* Elimina o contraste 1:1 da lista com o fundo */
     padding: 12px 0;
     width: 100%;
 }
 
-nav ul li a {
+/* Garante que as tags li não causem conflito de cor herdada */
+nav ul li {
     color: var(--text-light);
+}
+
+/* Estilo dos links de menu */
+nav ul li a {
+    color: var(--text-light) !important; /* Garante contraste aprovado de 12.63:1 */
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 300;
@@ -81,8 +83,9 @@ nav ul li a {
     padding: 5px 10px;
 }
 
+/* Efeito de Hover bem projetado nos links */
 nav ul li a:hover {
-    color: #e0e0e0;
+    color: #e0e0e0 !important;
     border-bottom: 2px solid var(--text-light);
 }
 
@@ -106,11 +109,11 @@ main > h1 {
 /* Organização dos cartões da coluna principal usando CSS Grid */
 .grid-container {
     display: grid;                  /* Ativa o CSS Grid */
-    grid-template-columns: 2fr 1fr; /* Coluna da esquerda (Sobre Mim) maior que a da direita */
+    grid-template-columns: 2fr 1fr; /* Coluna da esquerda maior que a da direita */
     gap: 25px;                      /* Espaçamento entre os cartões */
 }
 
-/* Responsividade: Transforma em uma única coluna em telas menores */
+/* Responsividade: Transforma em uma única coluna em ecrãs menores */
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: 1fr;
@@ -251,14 +254,14 @@ footer p {
     gap: 8px;
 }
 
-/* Configuração para exibir elemento span em bloco quando necessário */
-header span, footer p span {
-    display: block; /* Força o elemento a comportar-se como bloco */
+/* Configuração para o span de ano do script JavaScript */
+footer p span {
+    display: inline-block; 
 }
 
-/* Estilo para a data do script JavaScript */
+/* Estilo para a data gerada pelo JavaScript (Contraste Aprovado) */
 #ultimaModificacao {
     color: var(--accent-color); /* Amarelo destacado */
-    font-size: 0.8rem;
-    
+    font-size: 0.85rem;
+    font-weight: bold;
 }
