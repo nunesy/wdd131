@@ -1,0 +1,256 @@
+/* ==========================================================================
+   1. Tipografia (Google Fonts API) e Variáveis de Cores
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --primary-color: #1b4d79;       /* Azul escuro dos títulos dos cards */
+    --secondary-color: #102a43;     /* Azul escuro do footer */
+    --nav-bg-color: #333333;         /* Fundo escuro da navegação */
+    --bg-light: #f4f4f4;            /* Fundo geral da página */
+    --text-dark: #333333;           /* Cor do texto principal */
+    --text-light: #ffffff;          /* Cor do texto claro */
+    --accent-color: #ffeb3b;         /* Amarelo para a última modificação */
+    
+    /* Fontes do projeto selecionadas via Google Fonts API */
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    --font-footer: 'Fredoka', sans-serif; 
+}
+
+/* ==========================================================================
+   2. Estilos Gerais da Página
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body); /* Opções de tipografia base */
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   3. Cabeçalho (Header) e Navegação (Nav)
+   ========================================================================== */
+header {
+    background-color: #1b4d79; 
+    text-align: center;
+    padding: 20px 0 0 0;
+}
+
+header h1 {
+    font-family: var(--font-heading);
+    color: var(--text-light);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+/* Configuração do CSS Flex na lista de navegação */
+nav ul {
+    display: flex;                 /* Ativa o CSS Flex na nav */
+    justify-content: space-around; /* Distribui os links uniformemente */
+    list-style-type: none;         /* Remove os marcadores de lista padrão */
+    background-color: var(--nav-bg-color);
+    padding: 12px 0;
+    width: 100%;
+}
+
+/* Estilo dos links de menu */
+nav ul li a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 300;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding: 5px 10px;
+}
+
+/* Efeito de Hover bem projetado nos links */
+nav ul li a:hover {
+    color: #e0e0e0;
+    border-bottom: 2px solid var(--text-light);
+}
+
+/* ==========================================================================
+   4. Layout Principal (Main) e Cartões (Grid)
+   ========================================================================== */
+main {
+    max-width: 1200px; /* Largura limitada */
+    margin: 40px auto; /* Centralizado horizontalmente na tela */
+    padding: 0 20px;
+}
+
+main > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 400;
+}
+
+/* Organização dos cartões da coluna principal usando CSS Grid */
+.grid-container {
+    display: grid;                  /* Ativa o CSS Grid */
+    grid-template-columns: 2fr 1fr; /* Coluna da esquerda (Sobre Mim) maior que a da direita */
+    gap: 25px;                      /* Espaçamento entre os cartões */
+}
+
+/* Responsividade: Transforma em uma única coluna em telas menores */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilização Individual dos Cartões (.card) */
+.card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.card h2 {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Estrutura Interna dos Cartões (Imagens e Textos Alinhados) */
+.card-content-top {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.card-content-top p {
+    flex: 1;
+    text-align: justify;
+}
+
+.card-content-top img {
+    width: 130px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 15px 0 5px 0;
+    color: #333;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #cccccc;
+    margin: 0 auto 20px auto;
+    width: 90%;
+}
+
+.card-content-bottom {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    align-items: center;
+}
+
+.card-content-bottom figure {
+    text-align: center;
+    font-size: 0.85rem;
+    font-style: italic;
+    color: #555;
+}
+
+.card-content-bottom img {
+    border: 1px solid #ddd;
+    padding: 2px;
+    background: #fff;
+}
+
+.card-content-bottom p {
+    flex: 1;
+    text-align: justify;
+}
+
+/* Lista de Recursos Web Dev (Segundo Card) */
+.card ul {
+    list-style-type: none; /* Remove o padrão para customizar */
+    padding: 0 25px;
+}
+
+.card ul li {
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 15px;
+}
+
+/* Marcador azul customizado antes dos itens da lista */
+.card ul li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+.card ul li a {
+    color: #0000ee;
+    text-decoration: underline;
+    font-size: 1rem;
+}
+
+.card ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ==========================================================================
+   5. Rodapé (Footer)
+   ========================================================================== */
+footer {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    font-family: var(--font-footer);
+    font-size: 1rem;
+}
+
+footer p {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Configuração para exibir elemento span em bloco quando necessário */
+header span, footer p span {
+    display: block; /* Força o elemento a comportar-se como bloco */
+}
+
+/* Estilo para a data do script JavaScript */
+#ultimaModificacao {
+    color: var(--accent-color); /* Amarelo destacado */
+    font-size: 0.8rem;
+    
+}
