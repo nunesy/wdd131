@@ -33,49 +33,41 @@ body {
 }
 
 /* ==========================================================================
-   3. Cabeçalho (Header) e Navegação (Nav) - Resolução de Contraste (WCAG AA)
+   3. Cabeçalho (Header) e Navegação (Nav) - Resolução Estrita de Contraste
    ========================================================================== */
 header {
     background-color: #1b4d79; /* rgb(27 77 121) */
-    color: var(--text-light);  /* Força o texto padrão a ser branco */
+    color: #ffffff !important;  /* Força absolutamente todo texto nativo a ser branco */
     text-align: center;
     padding: 20px 0 0 0;
 }
 
-header h1 {
-    font-family: var(--font-heading);
-    color: var(--text-light) !important; /* Garante o h1 100% branco (rgb(255 255 255)) */
-    font-size: 1.6rem;
-    font-weight: 400;
-    margin-bottom: 20px;
-    padding: 0 10px;
+/* Aplica a cor branca para o h1 e qualquer elemento de texto dentro dele */
+header h1, 
+header h1 *,
+header * {
+    color: #ffffff !important; /* Garante taxa de contraste aprovada de 8.81:1 */
 }
 
-/* Força a exibição em bloco para o span de título conforme exigido */
+/* Ajuste específico para o span exigido no relatório de erros */
 header h1 #course-title {
-    color: var(--text-light) !important;
-    display: block; /* Exibe como um bloco para centralizar com facilidade */
+    display: block; /* Exibe como um bloco para centralizar com facilidade [cite: 8] */
 }
 
-/* Configuração do CSS Flex na lista de navegação */
+/* Configuração do CSS Flex na lista de navegação [cite: 4, 9] */
 nav ul {
-    display: flex;                 /* Ativa o CSS Flex na nav */
+    display: flex;                 /* Ativa o CSS Flex na nav [cite: 4, 9] */
     justify-content: space-around; /* Distribui os links uniformemente */
     list-style-type: none;         /* Remove os marcadores de lista padrão */
     background-color: var(--nav-bg-color); /* rgb(51 51 51) */
-    color: var(--text-light);              /* Elimina o contraste 1:1 da lista com o fundo */
     padding: 12px 0;
     width: 100%;
 }
 
-/* Garante que as tags li não causem conflito de cor herdada */
-nav ul li {
-    color: var(--text-light);
-}
-
-/* Estilo dos links de menu */
+/* Garante que os itens de lista e links usem a cor correta sobre o fundo escuro */
+nav ul li,
 nav ul li a {
-    color: var(--text-light) !important; /* Garante contraste aprovado de 12.63:1 */
+    color: #ffffff !important; /* Contraste aprovado de 12.63:1 */
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 300;
@@ -83,10 +75,10 @@ nav ul li a {
     padding: 5px 10px;
 }
 
-/* Efeito de Hover bem projetado nos links */
+/* Efeito de Hover bem projetado nos links [cite: 5] */
 nav ul li a:hover {
     color: #e0e0e0 !important;
-    border-bottom: 2px solid var(--text-light);
+    border-bottom: 2px solid #ffffff;
 }
 
 /* ==========================================================================
