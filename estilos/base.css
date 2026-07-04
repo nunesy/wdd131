@@ -33,41 +33,41 @@ body {
 }
 
 /* ==========================================================================
-   3. Cabeçalho (Header) e Navegação (Nav) - Resolução Estrita de Contraste
+   3. Cabeçalho (Header) e Navegação (Nav) - Resolução Absoluta de Contraste
    ========================================================================== */
 header {
     background-color: #1b4d79; /* rgb(27 77 121) */
-    color: #ffffff !important;  /* Força absolutamente todo texto nativo a ser branco */
+    color: #ffffff !important; 
     text-align: center;
     padding: 20px 0 0 0;
 }
 
-/* Aplica a cor branca para o h1 e qualquer elemento de texto dentro dele */
+/* Força explicitamente o h1, o span interno e qualquer texto no header a ser branco */
 header h1, 
-header h1 *,
-header * {
-    color: #ffffff !important; /* Garante taxa de contraste aprovada de 8.81:1 */
+header h1 span, 
+header #course-title {
+    color: #ffffff !important; /* Taxa de contraste aprovada de 8.81:1 */
 }
 
-/* Ajuste específico para o span exigido no relatório de erros */
-header h1 #course-title {
-    display: block; /* Exibe como um bloco para centralizar com facilidade [cite: 8] */
+/* Regra exigida: faz o span do título comportar-se como bloco para centralização */
+header #course-title {
+    display: block; /* display: block; conforme os requisitos do TXT */
 }
 
-/* Configuração do CSS Flex na lista de navegação [cite: 4, 9] */
+/* Configuração do CSS Flex na lista de navegação */
 nav ul {
-    display: flex;                 /* Ativa o CSS Flex na nav [cite: 4, 9] */
-    justify-content: space-around; /* Distribui os links uniformemente */
-    list-style-type: none;         /* Remove os marcadores de lista padrão */
+    display: flex;                 
+    justify-content: space-around; 
+    list-style-type: none;         
     background-color: var(--nav-bg-color); /* rgb(51 51 51) */
     padding: 12px 0;
     width: 100%;
 }
 
-/* Garante que os itens de lista e links usem a cor correta sobre o fundo escuro */
+/* Força os itens da lista e links a ignorarem a cor escura do body */
 nav ul li,
 nav ul li a {
-    color: #ffffff !important; /* Contraste aprovado de 12.63:1 */
+    color: #ffffff !important; /* Taxa de contraste aprovada de 12.63:1 */
     text-decoration: none;
     font-size: 1.1rem;
     font-weight: 300;
@@ -75,7 +75,7 @@ nav ul li a {
     padding: 5px 10px;
 }
 
-/* Efeito de Hover bem projetado nos links [cite: 5] */
+/* Efeito de Hover nos links */
 nav ul li a:hover {
     color: #e0e0e0 !important;
     border-bottom: 2px solid #ffffff;
