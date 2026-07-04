@@ -34,34 +34,44 @@ body {
 }
 
 /* ==========================================================================
-   3. Cabeçalho (Header) e Navegação (Nav)
+   3. Cabeçalho (Header) e Navegação (Nav) - Correção de Contraste
    ========================================================================== */
 header {
-    background-color: #1b4d79; 
+    background-color: #1b4d79; /* rgb(27 77 121) */
+    color: var(--text-light);  /* Força todo o texto base do header a ser branco */
     text-align: center;
     padding: 20px 0 0 0;
 }
 
 header h1 {
     font-family: var(--font-heading);
-    color: var(--text-light);
+    color: var(--text-light);  /* Garante o h1 e o span interno com cor branca rgb(255 255 255) */
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 20px;
     padding: 0 10px;
 }
 
-/* Configuração do CSS Flex na lista de navegação */
+/* Garante que o span específico do título também herde a cor branca */
+header h1 #course-title {
+    color: var(--text-light);
+}
+
+/* Força a propriedade display: block exigida nos requisitos para centralizar facilmente */
+header span {
+    display: block; 
+}
+
+/* Restante da navegação permanece igual... */
 nav ul {
-    display: flex;                 /* Ativa o CSS Flex na nav */
-    justify-content: space-around; /* Distribui os links uniformemente */
-    list-style-type: none;         /* Remove os marcadores de lista padrão */
+    display: flex;                 
+    justify-content: space-around; 
+    list-style-type: none;         
     background-color: var(--nav-bg-color);
     padding: 12px 0;
     width: 100%;
 }
 
-/* Estilo dos links de menu */
 nav ul li a {
     color: var(--text-light);
     text-decoration: none;
@@ -71,7 +81,6 @@ nav ul li a {
     padding: 5px 10px;
 }
 
-/* Efeito de Hover bem projetado nos links */
 nav ul li a:hover {
     color: #e0e0e0;
     border-bottom: 2px solid var(--text-light);
