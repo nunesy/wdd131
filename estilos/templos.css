@@ -1,20 +1,20 @@
+/* Configurações Gerais */
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-
-body{
+body {
     font-family: 'Roboto', sans-serif;
     background-color: #f5f5f5;
     padding: 20px;
 }
 
+/* --- HEADER E NAVEGAÇÃO --- */
 header {
     background-color: #4c1d95;
     width: 100%;
-    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -22,154 +22,149 @@ header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 15px;
+    padding: 15px 20px;
+    position: relative; /* Base para o menu suspenso */
 }
 
-header p {
-    color: #fff;
-    font-weight: bold;
+header nav p {
+    color: #ffffff;
+    font-weight: 700;
     font-size: 1.1rem;
     margin: 0;
     display: flex;
     align-items: center;
-
 }
 
-nav ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-}
-
-nav a {
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    text-decoration: none;
-}
-
-main {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-top: 20px;
-}
-
-main h1 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: black;
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-footer {
-    background-color: #4c1d95;
-    color: #fff;
-    text-align: center;
-    padding: 10px 20px;
-    font-size: 0.75rem;
-    max-width: 1000px;
-    margin: 20px auto 0 auto;
-}
-
-/* --- Menu Hamburguer --- */
-
-/* Esaconder o botão em tela grande */
-.hamburguer {
+/* Menu de Links (Modo Mobile Oculto) */
+.menu {
     display: none;
+    flex-direction: column;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #4c1d95;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    gap: 15px;
+    text-align: center;
+    z-index: 9;
+}
+
+.menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 400;
+    display: inline-block;
+}
+
+/* Classe ativa exibida pelo JS */
+.menu.active {
+    display: flex !important;
+}
+
+/* Botão Hambúrguer ativo por padrão no mobile */
+.hamburguer {
+    display: flex !important;
     background: none;
     border: none;
     cursor: pointer;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
     padding: 5px;
     z-index: 10;
+    width: 30px;
+    height: 30px;
 }
 
 .hamburguer .bar {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #fff;
+    background-color: #ffffff !important;
     transition: all 0.3s ease-in-out;
 }
 
+/* Animação do X */
+.hamburguer.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburguer.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburguer.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+main h1 {
+    text-align: center;
+    margin: 20px auto 25px auto;
+    color: #333333;
+    font-size: 1.25rem;
+    font-weight: 700;
+    width: 100%;
+}
+
+/* Grade de Imagens (1 Coluna Empilhada) */
 .foto-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 15px;
-    }
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+}
 
-    .foto-grid figure {
-        background-color: #fff;
-        padding: 10px;
-        border: 1px solid #e5e7eb;
-        text-align: center;
-    }
-    .foto-grid figure img {
-        width: 100%;
-        height: auto;
-        display: block;
-    }
-    
-    .foto-grid figcaption {
-        display: block;
-        margin-top: 8px;
-        font-size: 0.75rem;
-        font-weight: 400;
-    }
+.foto-grid figure {
+    background-color: #ffffff;
+    padding: 10px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+    margin: 0 auto;
+}
 
-/* Menu para telas menores (mobile) */
-@media (max-width: 768px) {
-    header nav {
-        position: relative;
-    }
+.foto-grid figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
-    .hamburguer {
-        display: flex;
-    }
+.foto-grid figcaption {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.75rem;
+    color: #6b7280;
+    font-weight: 400;
+}
 
-    .menu {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #4c1d95;
-        padding: 20px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        gap: 15px;
-        text-align: center;
-        z-index: 9;
-    }
+/* --- RODAPÉ --- */
+footer {
+    background-color: #4c1d95;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 0.75rem;
+    margin: 20px auto 0 auto;
+}
 
-    .menu.active {
-        display: flex;
-    }
+footer p {
+    margin: 0;
+    font-weight: 400;
+}
 
-    .hamburguer.active .bar.active:nth-child(1) {
-        transform: translateY(-8px) rotate(45deg);
-    }
-
-    .hamburguer.active .bar.active:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburguer.active .bar.active:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .foto-grid {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 20px;
-    }
-
-    .foto-grid figure {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
+footer .footer-update {
+    margin-top: 6px;
+    font-size: 0.65rem;
+    opacity: 0.8;
 }

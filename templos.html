@@ -10,8 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="estilos/templos.css">
-    <link rel="stylesheet" href="estilos/templos-grandes.css">
-    <script src="scripts/templos.js" defer></script>
+    <link rel="stylesheet" href="estilos/templos-grandes.css" media="screen and (min-width: 796px)">
+    
 </head>
 <body>
     <header>
@@ -25,11 +25,11 @@
             </button>
 
             <ul class="menu">
-                <li><a href="#">Página Inicial</a></li>
-                <li><a href="#">Antigo</a></li>
-                <li><a href="#">Novo</a></li>
-                <li><a href="#">Grande</a></li>
-                <li><a href="#">Pequeno</a></li>
+                <li><a href="#Home">Página Inicial</a></li>
+                <li><a href="#Old">Antigo</a></li>
+                <li><a href="#New">Novo</a></li>
+                <li><a href="#Large">Grande</a></li>
+                <li><a href="#Small">Pequeno</a></li>
             </ul>
         </nav>
     </header>
@@ -77,7 +77,9 @@
     </main>
     <footer>
         <p>&copy;<span id="anoAtual"></span> Yuri Nunes - Fortaleza - Brasil</p>
-        <p><p id="ultimaModificacao"></p></p>
+        <p id="ultimaModificacao"></p>
     </footer>
+
+    <script src="scripts/templos.js" defer></script>
 </body>
 </html>
