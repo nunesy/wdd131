@@ -1,4 +1,4 @@
-/* Configurações Gerais */
+/* Configurações Gerais - Base do Site */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -23,7 +23,7 @@ header nav {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    position: relative; /* Base para o menu suspenso */
+    position: relative;
 }
 
 header nav p {
@@ -62,12 +62,12 @@ header nav p {
 
 /* Classe ativa exibida pelo JS */
 .menu.active {
-    display: flex !important;
+    display: flex;
 }
 
 /* Botão Hambúrguer ativo por padrão no mobile */
 .hamburguer {
-    display: flex !important;
+    display: flex;
     background: none;
     border: none;
     cursor: pointer;
@@ -84,11 +84,11 @@ header nav p {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #ffffff !important;
+    background-color: #ffffff;
     transition: all 0.3s ease-in-out;
 }
 
-/* Animação do X */
+/* X DO BOTÃO */
 .hamburguer.active .bar:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
 }
@@ -161,10 +161,4 @@ footer {
 footer p {
     margin: 0;
     font-weight: 400;
-}
-
-footer .footer-update {
-    margin-top: 6px;
-    font-size: 0.65rem;
-    opacity: 0.8;
 }

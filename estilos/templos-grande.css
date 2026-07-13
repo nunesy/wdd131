@@ -1,0 +1,39 @@
+/* --- DESKTOP --- */
+@media screen and (min-width: 796px) {
+
+    header, main, footer {
+        max-width: 1000px;
+    }
+
+    /* Oculta o botão hamburguer na tela grande */
+    .hamburguer {
+        display: none;
+    }
+
+    /* Menu horizontal */
+    .menu {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background-color: transparent;
+        padding: 0;
+        box-shadow: none;
+        gap: 20px;
+    }
+
+    .menu a:hover {
+        text-decoration: underline;
+    }
+
+    /* Exibição das fotos para 3 colunas */
+    .foto-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    /* Largura máxima das imagens */
+    .foto-grid figure {
+        max-width: none;
+    }
+}
