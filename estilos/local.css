@@ -1,0 +1,177 @@
+:root {
+    --primary-color: #0d2c54;   /* Azul Marinho Profundo (Excelente contraste com texto branco) */
+    --secondary-color: #1a5e95; /* Azul Dinâmico/Histórico (Para as barras e detalhes) */
+    --text-color: #1e293b;      /* Grafite Escuro (Mais suave e acessível que o preto puro) */
+    --bg-light: rgba(255, 255, 255, 0.92); /* Branco ligeiramente mais opaco para aumentar o contraste no desktop */
+    --font-family: Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--text-color);
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: var(--primary-color);
+    border-bottom: 8px solid var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+/* --- ESTRUTURA DO CONTEÚDO (MOBILE) --- */
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.imagem-hero {
+    width: 100%;
+}
+
+.imagem-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Cartões no Mobile */
+.dados, .clima {
+    width: 90%;
+    max-width: 400px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center; /* Títulos centralizados no mobile */
+}
+
+main h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+/* Listas internas dos cartões */
+.lista {
+    list-style: none;
+    width: 100%;
+    display: block; /* Garante comportamento de bloco padrão */
+    text-align: left; /* Garante que os textos comecem na esquerda */
+}
+
+.lista li {
+    display: flex;
+    justify-content: space-between; /* Rótulo na esquerda, Valor na direita */
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    padding-bottom: 5px;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+}
+
+.label {
+    font-weight: bold;
+    text-align: left;
+}
+
+.value {
+    text-align: right;
+}
+
+.icone-clima {
+    margin-bottom: 15px;
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* 🖥️ RESPONSIVIDADE: TELAS MAIORES (DESKTOP) */
+@media (min-width: 800px) {
+    main {
+        position: relative;
+        display: block; /* Desativa o flex do mobile para permitir posicionamento absoluto */
+        width: 100%;
+    }
+
+    .imagem-hero img {
+        height: 600px;
+    }
+
+    .icone-clima {
+        display: none; /* Some com o SVG no desktop */
+    }
+
+    .titulo-clima::after {
+        content: " ⛅"; /* Insere o emoji */
+    }
+
+    /* Cartões Flutuantes sobre a imagem */
+    .dados, .clima {
+        position: absolute;
+        background-color: var(--bg-light);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        margin: 0;
+        z-index: 10;
+        width: 380px; /* Largura confortável para não quebrar linhas */
+        padding: 25px;
+        text-align: left; /* Alinha todo o conteúdo do cartão à esquerda */
+        
+    }
+
+    /* Faixa de Cabeçalho dos Cartões */
+    .dados h2, .clima h2 {
+        background-color: rgba(0, 126, 58, 0.85);
+        color: white;
+        font-size: 1.3rem;
+        text-align: left; /* Força o texto do título para a esquerda */
+        padding: 8px 25px;
+        font-weight: bold;
+        
+        width: auto;
+        /* Força a barra a esticar de ponta a ponta, anulando o padding do cartão */
+        margin: -20px 0 20px -40px;
+        display: inline-block;
+
+        border-radius: 4px 0 0 0;
+    }
+
+    /* Posições exatas baseadas no wireframe largo */
+    .dados {
+        left: 5%;
+        top: 8%;
+    }
+
+    .clima {
+        right: 5%;
+        top: 40%;
+    }
+}

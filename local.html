@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local</title>
+
+    <link rel="stylesheet" href="estilos/local.css">
+    <script src="scripts/local.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>São Miguel das Missões - RS</h1>
+    </header>
+    <main>
+        <picture class="imagem-hero">
+            <source media="(min-width: 800px)" srcset="imagens/sao-miguel-large.webp">
+            <img src="imagens/sao-miguel-small.webp" alt="Ruinas de São Miguel">
+        </picture>
+
+        <section class="dados">
+            <h2>Dados</h2>
+            <ul class="lista">
+                <li><span class="label">Área:</span> <span class="value">1 228,447 km²</span></li>
+                <li><span class="label">População:</span> <span class="value">7 056 hab</span></li>
+                <li><span class="label">Estado:</span> <span class="value">Rio Grande do Sul</span></li>
+                <li><span class="label">Idioma:</span> <span class="value">Português</span></li>
+                <li><span class="label">Moeda:</span> <span class="value">Real R$</span></li>
+                <li><span class="label">Fuso Horário:</span> <span class="value">Hora de Brasília UTC−3</span></li>
+            </ul>
+        </section>
+
+        <section class="clima">
+            <h2 class="titulo-clima">Clima</h2>
+
+            <div class="icone-clima">
+                <svg class="svg-clima" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="80" height="80">
+                    <!-- Sol atrás da nuvem -->
+                    <circle cx="42" cy="22" r="10" fill="#FFA500" />
+                    <path d="M42,6 v4 M42,38 v4 M26,22 h4 M58,22 h4 M30.7,10.7 l2.8,2.8 M50.5,30.5 l2.8,2.8 M53.3,10.7 l-2.8,2.8 M33.5,30.5 l-2.8,2.8" stroke="#FFA500" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+            </div>
+            <ul class="lista">
+                <li><span class="label">Temperatura:</span> <span class="value" id="temp">28 °C</span></li>
+                <li><span class="label">Condições:</span> <span class="value">Céu Limpo</span></li>
+                <li><span class="label">Vento:</span> <span class="value" id="wind">23 km/h</span></li>
+                <li><span class="label">Sensação Térmica:</span> <span class="value" id="wind-chill">Cálculo...</span></li>
+            </ul>
+            
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy;<span id="anoAtual"></span>🎸Yuri Nunes🎸 Fortaleza-CE</p>
+        <p><span id="ultimaModificacao"></span></p>
+    </footer>
+</body>
+</html>
