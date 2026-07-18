@@ -1,8 +1,8 @@
 :root {
-    --primary-color: #0d2c54;   /* Azul Marinho Profundo (Excelente contraste com texto branco) */
-    --secondary-color: #1a5e95; /* Azul Dinâmico/Histórico (Para as barras e detalhes) */
-    --text-color: #1e293b;      /* Grafite Escuro (Mais suave e acessível que o preto puro) */
-    --bg-light: rgba(255, 255, 255, 0.92); /* Branco ligeiramente mais opaco para aumentar o contraste no desktop */
+    --primary-color: #0d2c54;   
+    --secondary-color: #1a5e95; 
+    --text-color: #1e293b;      
+    --bg-light: rgba(255, 255, 255, 0.92);
     --font-family: Arial, sans-serif;
 }
 
@@ -75,13 +75,13 @@ main h2 {
 .lista {
     list-style: none;
     width: 100%;
-    display: block; /* Garante comportamento de bloco padrão */
-    text-align: left; /* Garante que os textos comecem na esquerda */
+    display: block; 
+    text-align: left; 
 }
 
 .lista li {
     display: flex;
-    justify-content: space-between; /* Rótulo na esquerda, Valor na direita */
+    justify-content: space-between; 
     align-items: center;
     margin-bottom: 10px;
     font-size: 0.95rem;
@@ -118,7 +118,7 @@ footer p {
 @media (min-width: 800px) {
     main {
         position: relative;
-        display: block; /* Desativa o flex do mobile para permitir posicionamento absoluto */
+        display: block; 
         width: 100%;
     }
 
@@ -127,11 +127,11 @@ footer p {
     }
 
     .icone-clima {
-        display: none; /* Some com o SVG no desktop */
+        display: none; 
     }
 
     .titulo-clima::after {
-        content: " ⛅"; /* Insere o emoji */
+        content: " ⛅"; 
     }
 
     /* Cartões Flutuantes sobre a imagem */
@@ -141,9 +141,9 @@ footer p {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
         margin: 0;
         z-index: 10;
-        width: 380px; /* Largura confortável para não quebrar linhas */
+        width: 380px; 
         padding: 25px;
-        text-align: left; /* Alinha todo o conteúdo do cartão à esquerda */
+        text-align: left; 
         
     }
 
