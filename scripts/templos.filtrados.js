@@ -59,7 +59,7 @@ const templos = [
     localizacao: "Campinas, São Paulo, Brasil",
     consagracao: "2002, 17 de maio",
     area: 48100,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/campinas-brazil/400x250/campinas-brazil-temple-1030-main.jpg"
+    urlDaImagem: "https://churchofjesuschristtemples.org/assets/img/temples/campinas-brazil-temple/campinas-brazil-temple-70652.jpg"
   },
   {
     nomeDoTemplo: "Salt Lake",
@@ -73,7 +73,7 @@ const templos = [
     localizacao: "Fortaleza, Ceará, Brasil",
     consagracao: "2019, 2 de junho",
     area: 36000,
-    urlDaImagem: "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/fortaleza-brazil/400x250/1-Fortaleza-Temple-Photo-2213673.jpg"
+    urlDaImagem: "https://churchofjesuschristtemples.org/assets/img/temples/fortaleza-brazil-temple/fortaleza-brazil-temple-59361.jpg"
   }
 ];
 
