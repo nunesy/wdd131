@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planejamento do Site - Gerenciador de Tarefas</title>
+    
+    <!-- O CSS abaixo aplica o esquema de cores e tipografia neste próprio documento -->
+    <style>
+        body {
+            background-color: #f4f4f9; /* Cor de fundo - Cinza Claro */
+            color: #333333; /* Cor do texto padrão */
+            font-family: 'Verdana', sans-serif; /* Tipografia do corpo do texto */
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50; /* Cor dos títulos - Azul Escuro */
+            font-family: 'Arial', sans-serif; /* Tipografia dos títulos */
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .destaque-verde {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .caixa-cor {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #ccc;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+        .wireframe-box {
+            border: 2px dashed #999;
+            padding: 20px;
+            text-align: center;
+            background-color: #e9ecef;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Planejamento do Site</h1>
+
+        <!-- 1. Nome do Site: Nome (junto com um logotipo) e motivo da escolha[cite: 1] -->
+        <h2>1. Nome do Site</h2>
+        
+        <!-- Bloco que coloca a logo e o nome lado a lado -->
+        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+            
+            <!-- Logo usando Emoji de foguete para combinar com "Bora Fazer!" -->
+            <div style="font-size: 45px; background-color: #27ae60; padding: 10px; border-radius: 10px; color: white;">🚀</div>
+            
+            <span style="font-size: 28px; font-weight: bold; color: #2c3e50;">Bora Fazer!</span>
+        </div>
+
+        <p><strong>Motivo da escolha:</strong> É um nome descontraído, chamativo e motivacional. Ele foge do padrão chato de "lista de tarefas" e incentiva o usuário a realmente começar a agir e concluir seus afazeres.</p>
+        <!-- 2. Finalidade do Site: Descrição do escopo[cite: 1] -->
+        <h2>2. Finalidade do Site</h2>
+        <p>A ideia do site é criar uma ferramenta simples e fácil acesso para ajudar as pessoas a organizar, anotar e acompanhar suas tarefas do dia a dia.</p>
+
+        <!-- 3. Cenários: Pelo menos duas perguntas do público-alvo[cite: 1] -->
+        <h2>3. Cenários</h2>
+        <p>Perguntas que um visitante faria ao usar o site:</p>
+        <ul>
+            <li>Como faço para adicionar uma nova tarefa que preciso entregar na sexta-feira?</li>
+            <li>Onde eu clico para ver apenas as tarefas que eu já concluí hoje?</li>
+        </ul>
+
+        <!-- 4. Esquema de Cores: Duas cores ou mais e onde aplicá-las[cite: 1] -->
+        <h2>4. Esquema de Cores</h2>
+        <p>As cores escolhidas e aplicadas neste documento são:</p>
+        <ul>
+            <li><span class="caixa-cor" style="background-color: #2c3e50;"></span> <strong>Azul Escuro (#2c3e50):</strong> Será usado nos títulos (h1, h2, h3) para dar um ar de organização e foco.</li>
+            <li><span class="caixa-cor" style="background-color: #f4f4f9;"></span> <strong>Cinza Claro (#f4f4f9):</strong> Será a cor de fundo geral da página, para não cansar a vista durante o uso.</li>
+            <li><span class="caixa-cor" style="background-color: #27ae60;"></span> <strong>Verde (#27ae60):</strong> Usado para botões (como "Adicionar Tarefa") e para <span class="destaque-verde">destacar ações importantes</span>.</li>
+        </ul>
+
+        <!-- 5. Tipografia: 1 a 3 fontes e onde aplicá-las[cite: 1] -->
+        <h2>5. Tipografia</h2>
+        <ul>
+            <li><strong>Arial:</strong> Será usada em todos os títulos do site. Escolhi por ser uma fonte limpa e de leitura rápida.</li>
+            <li><strong>Verdana:</strong> Será usada no corpo do texto (como listas e descrições das tarefas). É uma fonte mais larguinha e ótima para ler em telas.</li>
+        </ul>
+
+        <!-- 6. Wireframe: Layout para mobile e desktop -->
+        <h2>6. Wireframe</h2>
+        <p>Abaixo estão os esquemas estruturais da página inicial, construídos com HTML/CSS para demonstrar a disposição dos elementos na tela.</p>
+        
+        <!-- CSS exclusivo para desenhar os wireframes -->
+        <style>
+            .wf-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                margin-top: 20px;
+            }
+            /* Estilo Base dos Bloquinhos */
+            .wf-box {
+                background-color: #ffffff;
+                border: 2px solid #555;
+                padding: 10px;
+                color: #555;
+                font-family: monospace;
+                text-align: center;
+                box-shadow: 5px 5px 0px #ccc;
+            }
+            .wf-header, .wf-footer { background-color: #ddd; height: 30px; line-height: 30px; font-weight: bold; }
+            .wf-input { border: 1px dashed #999; height: 40px; line-height: 40px; margin: 10px 0; }
+            .wf-task { border: 1px solid #999; height: 30px; margin-bottom: 5px; text-align: left; padding-left: 10px; background-color: #f9f9f9; }
+            
+            /* Mobile: Tela estreita, tudo empilhado */
+            .wf-mobile {
+                width: 250px;
+            }
+            
+            /* Desktop: Tela larga, layout com duas colunas */
+            .wf-desktop {
+                width: 600px;
+            }
+            .wf-desktop-body {
+                display: flex;
+                gap: 10px;
+                margin: 10px 0;
+            }
+            .wf-sidebar {
+                width: 30%;
+                border: 1px dashed #999;
+                padding: 10px;
+            }
+            .wf-main {
+                width: 70%;
+            }
+        </style>
+
+        <div class="wf-container">
+            
+            <!-- Wireframe Mobile -->
+            <div class="wireframe-box">
+                <h3>Visualização Móvel (Celular)</h3>
+                <div class="wf-box wf-mobile">
+                    <div class="wf-header">Logo / Cabeçalho</div>
+                    <div class="wf-input">+ Nova Tarefa... [Botão]</div>
+                    <div class="wf-task">☑ Estudar HTML</div>
+                    <div class="wf-task">☐ Fazer exercícios</div>
+                    <div class="wf-task">☐ Comprar pão</div>
+                    <div class="wf-footer">Rodapé / Referências</div>
+                </div>
+            </div>
+
+            <!-- Wireframe Desktop -->
+            <div class="wireframe-box">
+                <h3>Visualização Desktop (Computador Amplo)</h3>
+                <div class="wf-box wf-desktop">
+                    <div class="wf-header">Minhas Tarefas - Logo / Navegação</div>
+                    
+                    <div class="wf-desktop-body">
+                        <div class="wf-sidebar">
+                            <p><strong>Filtros</strong></p>
+                            <p>Todas</p>
+                            <p>Pendentes</p>
+                            <p>Concluídas</p>
+                        </div>
+                        
+                        <div class="wf-main">
+                            <div class="wf-input">+ Adicionar Nova Tarefa... [ Salvar ]</div>
+                            <div class="wf-task">☑ Estudar HTML e CSS para o projeto</div>
+                            <div class="wf-task">☐ Fazer exercícios de JavaScript</div>
+                            <div class="wf-task">☐ Comprar pão na padaria</div>
+                        </div>
+                    </div>
+                    
+                    <div class="wf-footer">Rodapé / Link para Citações</div>
+                </div>
+            </div>
+
+        </div>
+</body>
+</html>
