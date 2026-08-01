@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliação Enviada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Avaliação Recebida!</h1>
+    </header>
+    
+    <main class="confirmation-container">
+        <h2>Obrigado pelo seu feedback!</h2>
+        <p>Sua avaliação foi registrada com sucesso.</p>
+        
+        <div class="counter-box">
+            <p>Total de avaliações enviadas por você: <strong id="contador-avaliacoes">0</strong></p>
+        </div>
+        
+        <a href="formulario.html" class="btn-voltar">Enviar outra avaliação</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Tarefa S05 - Formulário de Avaliação</p>
+    </footer>
+
+    <script>
+        // Lógica do LocalStorage para contar as submissões
+        document.addEventListener('DOMContentLoaded', () => {
+            // Recupera a contagem atual (se existir)
+            let count = localStorage.getItem('numeroAvaliacoes');
+            
+            // Se não houver, inicia em 0
+            if (!count) {
+                count = 0;
+            }
+            
+            // Adiciona 1 para o novo envio
+            count = parseInt(count) + 1;
+            
+            // Salva de volta no LocalStorage
+            localStorage.setItem('numeroAvaliacoes', count);
+            
+            // Exibe na tela
+            document.getElementById('contador-avaliacoes').textContent = count;
+        });
+    </script>
+</body>
+</html>
