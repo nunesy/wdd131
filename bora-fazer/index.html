@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página inicial do projeto Bora Fazer!">
+    <title>Bora Fazer! - Minhas Tarefas</title>
+    <!-- CSS Externo -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Script com defer no head -->
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-icon">🚀</span>
+            <h1>Bora Fazer!</h1>
+            <!-- Botão de Modo Escuro -->
+            <button id="btn-tema" class="btn-tema" title="Mudar Tema">🌙</button>
+        </div>
+        <nav>
+            <button id="btn-menu" class="menu-toggle">☰</button>
+            <ul id="menu-lista">
+                <li><a href="index.html">Painel de Tarefas</a></li>
+                <li><a href="nova-tarefa.html">Nova Tarefa</a></li>
+                <li><a href="painel.html">Estatísticas e Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="acoes-painel">
+            <h2>Suas Tarefas</h2>
+            <!-- Nova estrutura com barra de busca -->
+            <div class="controles-painel">
+                <input type="text" id="input-busca" placeholder="🔍 Buscar tarefa..." class="input-busca">
+                <button id="btn-limpar" class="btn-secundario">Limpar Concluídas</button>
+            </div>
+        </section>
+
+        <!-- Esta é a área onde o JavaScript vai injetar as tarefas dinamicamente -->
+        <section id="lista-tarefas" class="container-tarefas">
+            <p>Carregando suas tarefas...</p>
+        </section>
+    </main>
+
+    <!-- MODAL DE EDIÇÃO (Fica escondido por padrão) -->
+    <div id="modal-edicao" class="modal-oculto">
+        <div class="modal-conteudo form-container">
+            <h2>✏️ Editar Tarefa</h2>
+            <form id="form-edicao">
+                <input type="hidden" id="edit-id"> <!-- Guarda o ID da tarefa secretamente -->
+
+                <div class="grupo-input">
+                    <label for="edit-titulo">Título:</label>
+                    <input type="text" id="edit-titulo" required>
+                </div>
+
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="edit-data-inicio">Data Início:</label>
+                        <input type="date" id="edit-data-inicio" required>
+                    </div>
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="edit-data-fim">Data/Hora Fim:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="date" id="edit-data-fim" required>
+                            <input type="time" id="edit-hora-fim">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="edit-link">Link de Referência:</label>
+                    <input type="url" id="edit-link">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="edit-prioridade">Prioridade:</label>
+                    <select id="edit-prioridade">
+                        <option value="baixa">Baixa</option>
+                        <option value="media">Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button type="submit" class="btn-principal">Salvar Alterações</button>
+                    <button type="button" id="btn-fechar-modal" class="btn-secundario">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Yuri Nunes | Bora Fazer!</p>
+        <p><a href="painel.html">Painel e Referências</a></p>
+    </footer>
+
+</body>
+
+</html>

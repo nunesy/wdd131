@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dashboard de estatísticas e referências do projeto Bora Fazer!">
+    <title>Painel e Referências - Bora Fazer!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-icon">🚀</span>
+            <h1>Bora Fazer!</h1>
+            <button id="btn-tema" class="btn-tema" title="Mudar Tema">🌙</button>
+        </div>
+        <nav>
+            <button id="btn-menu" class="menu-toggle">☰</button>
+            <ul id="menu-lista">
+                <li><a href="index.html">Painel de Tarefas</a></li>
+                <li><a href="nova-tarefa.html">Nova Tarefa</a></li>
+                <li><a href="painel.html">Estatísticas e Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SEÇÃO 1: DASHBOARD DE ESTATÍSTICAS -->
+        <section class="form-container">
+            <h2>📊 Seu Desempenho</h2>
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <h3 id="stat-total">0</h3>
+                    <p>Total</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="stat-concluidas" style="color: #27ae60;">0</h3>
+                    <p>Concluídas</p>
+                </div>
+                <div class="stat-box">
+                    <h3 id="stat-pendentes" style="color: #d35400;">0</h3>
+                    <p>Pendentes</p>
+                </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <p><strong>Progresso:</strong> <span id="texto-progresso">0%</span></p>
+                <!-- A barra de progresso visual -->
+                <div class="barra-fundo">
+                    <div id="barra-progresso" class="barra-preenchida" style="width: 0%;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: REFERÊNCIAS E DOCUMENTAÇÃO TÉCNICA -->
+        <section class="acoes-painel">
+            <h2>📚 Referências e Tecnologias do Projeto</h2>
+            <p>Documentação oficial e padrões de terceiros utilizados no desenvolvimento da aplicação:</p>
+
+            <ul style="margin-top: 15px; padding-left: 20px; line-height: 1.8;">
+                <li><strong>MDN Web Docs (Mozilla):</strong> Utilizado como base de consulta para manipulação avançada
+                    de
+                    Datas (<code
+                        style="background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px;">Date()</code>),
+                    manipulação do DOM e métodos de Array (<code
+                        style="background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px;">filter</code>, <code
+                        style="background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px;">map</code>).</li>
+                <li><strong>LocalStorage API:</strong> Padrão nativo do HTML5 para persistência local de dados no
+                    navegador
+                    do usuário.</li>
+                <li><strong>Tipografia e Ícones:</strong> Utilização de fontes padrão do sistema (Verdana e Arial)
+                    combinadas com Emojis nativos para máxima performance e leveza no carregamento.</li>
+                <li><strong>Design System:</strong> Paleta de cores inspirada em interfaces modernas de produtividade,
+                    estruturada via Variáveis CSS (<code
+                        style="background: rgba(0,0,0,0.05); padding: 2px 5px; border-radius: 4px;">:root</code>) com
+                    suporte completo a Modo Escuro (Dark Mode).</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Yuri Nunes | Bora Fazer!</p>
+        <p><a href="painel.html">Painel e Referências</a></p>
+    </footer>
+
+</body>
+
+</html>

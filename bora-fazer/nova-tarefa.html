@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Página para adicionar nova tarefa ao projeto Bora Fazer!">
+    <title>Nova Tarefa - Bora Fazer!</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo-container">
+            <span class="logo-icon">🚀</span>
+            <h1>Bora Fazer!</h1>
+        </div>
+        <nav>
+            <button id="btn-menu" class="menu-toggle">☰</button>
+            <ul id="menu-lista">
+                <li><a href="index.html">Painel de Tarefas</a></li>
+                <li><a href="nova-tarefa.html">Nova Tarefa</a></li>
+                <li><a href="painel.html">Estatísticas e Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Adicionar Nova Tarefa</h2>
+            <!-- Este formulário será capturado pelo nosso JavaScript depois -->
+            <form id="form-tarefa">
+                <div class="grupo-input">
+                    <label for="titulo">O que você precisa fazer?</label>
+                    <input type="text" id="titulo" name="titulo" required
+                        placeholder="Ex: Revisar a documentação do projeto">
+                </div>
+
+                <!-- Novo bloco com Data de Início e Data/Hora de Fim -->
+                <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="data-inicio">Data de Início:</label>
+                        <input type="date" id="data-inicio" name="data-inicio" required>
+                    </div>
+
+                    <div class="grupo-input" style="flex: 1;">
+                        <label for="data-fim">Data e Hora de Fim:</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="date" id="data-fim" name="data-fim" required>
+                            <input type="time" id="hora-fim" name="hora-fim">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Novo campo para o Link de Referência -->
+                <div class="grupo-input">
+                    <label for="link-ref">Link de Referência (Opcional):</label>
+                    <input type="url" id="link-ref" name="link-ref"
+                        placeholder="Ex: https://www.churchofjesuschrist.org/?lang=por">
+                </div>
+
+                <div class="grupo-input">
+                    <label for="prioridade">Prioridade:</label>
+                    <select id="prioridade" name="prioridade">
+                        <option value="baixa">Baixa</option>
+                        <option value="media" selected>Média</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-principal">Salvar Tarefa</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - Yuri Nunes | Bora Fazer!</p>
+        <p><a href="painel.html">Painel e Referências</a></p>
+    </footer>
+
+</body>
+
+</html>
